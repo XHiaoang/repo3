@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <!-- <bean id="acountDao" class="com.dao.impl.AcountDaoImpl" scope="singleton"></bean>
+    <bean id="acountService" class="com.service.impl.AcountServiceImpl" scope="" ></bean>
+
+    <bean id="" class="" factory-method=""></bean>   &lt;!&ndash; 此处是加载静态方法&ndash;&gt;-->
+
+  <!--  <bean id="aa" class="com.service.impl.AcountServiceImpl"></bean>                     &lt;!&ndash;将此对象交给spring管理 &ndash;&gt;
+    <bean id="aad" factory-bean="aa" factory-method="findAll"></bean>                   指定实例对象的方法 -->
+<!--
+    <bean id="dada" class="com.dao.impl.AcountDaoImpl">
+
+        <constructor-arg name="name" value="test"></constructor-arg>
+        <constructor-arg name="age" value="22"></constructor-arg>
+        <constructor-arg name="adrres" value="hunan"></constructor-arg>
+        <constructor-arg name="date" ref="now"></constructor-arg>
+    </bean>
+    <bean id="now" class="java.util.Date"></bean>-->
+
+    <bean id="set" class="com.dao.impl.AcountDaoImpl">
+        <property name="name" value="ss"></property>
+        <property name="age" value="22"></property>
+        <property name="adrres" value="hunan"></property>
+        <property name="date" ref="now"></property>
+    </bean>
+    <bean id="now" class="java.util.Date"></bean>
+
+    <!--<bean>
+        <property name="name">
+            <list>
+                <value>sdsa</value>
+                <value>sdsa</value>
+                <value>sdsa</value>
+            </list>
+        </property>
+        <property name="da">
+            <props>
+                <prop key="dsa" >dsadas</prop>
+            </props>
+            
+        </property>
+
+        <property name="dsa">
+            <map>
+                <entry key="dsad" value="dadas"></entry>
+            </map>
+
+        </property>
+
+    </bean>-->
+    <context:component-scan base-package="com.dao.impl"></context:component-scan>
+
+</beans>
